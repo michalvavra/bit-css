@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bit.css</title>
+    <link rel="stylesheet" href="bit.css" />
+
+    <script type="module">
+      // new EventSource("/esbuild").addEventListener("change", () =>
+      //   location.reload(),
+      // );
+      import { CodeBlock } from "./copy.js";
+      // Define the new element
+      customElements.define("bit-code-block", CodeBlock);
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <h1>bit.css</h1>
+      <p>A bit of classless CSS.</p>
+      <nav>
+        <ol>
+          <li><a href="#">Homes</a></li>
+          <li><a href="#">Example</a></li>
+          <li><a href="https://github.com">GitHub</a></li>
+        </ol>
+      </nav>
+    </header>
+    <main>
+      <section id="section-text">
+        <h2>Text</h2>
+        <blockquote>
+          <p>
+            Why did the AI decide to throw a party? It wanted to add a bit more
+            fun to its binary life. So, it sent out digital invites with a bit
+            of encryption, saying, "Join my byte-sized bash, where every bit
+            counts, and the only key to entry is a good algorithm!"
+          </p>
+          <p>The dress code? Anything but analog.</p>
+          <cite>&ndash;Random AI</cite>
+        </blockquote>
+      </section>
+
+      <section id="section-buttons">
+        <h3>Buttons</h3>
+        <button>Button</button>
+        <input type="button" value="Input Button" />
+        <a href="#"><button>Anchor Button</button></a>
+        <button disabled>Disabled</button>
+        <button>
+          <!-- Icons from https://feathericons.com v4.29.1. -->
+          <svg>
+            <use href="feather-sprite.svg#cloud-rain" />
+          </svg>
+          <span>Icon</span>
+        </button>
+
+        <bit-code-block>
+          <button>Button</button>
+          <input type="button" value="Input Button" />
+          <a href="#"><button>Anchor Button</button></a>
+          <button disabled>Disabled</button>
+        </bit-code-block>
+      </section>
+
+      <section id="section-form">
+        <h2>Form</h2>
+
+        <form onsubmit="preventDefault();">
+          <!-- Nothing breaks when we try to modify the form. -->
+          <div style="display: flex; gap: 1rem">
+            <label
+              >Username<input
+                name="name"
+                autocomplete="nickname"
+                value="johnny42"
+                required
+            /></label>
+            <label
+              >Email<input
+                name="email"
+                autocomplete="email"
+                type="email"
+                placeholder="john@example.com"
+            /></label>
+          </div>
+
+          <!-- Required asterisk works for both parent and sibling `<label>`. -->
+          <div style="display: flex; gap: 1rem">
+            <div>
+              <label for="password-example">Password</label>
+              <input
+                id="password-example"
+                name="password-field"
+                autocomplete="current-password"
+                type="password"
+                required
+              />
+            </div>
+            <div>
+              <label for="id-example">ID</label>
+              <input
+                id="id-example"
+                name="password-field"
+                autocomplete="off"
+                value="2auy0RiDjBOBOtQF"
+                disabled
+              />
+            </div>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+
+        <!-- Artificial form to remove Chromium warning "Password field is not contained in a form". -->
+        <form onsubmit="preventDefault();">
+          <bit-code-block>
+            <div style="display: flex; gap: 1rem">
+              <label
+                >Username<input name="name" value="johnny42" required
+              /></label>
+              <label
+                >Email<input
+                  name="email"
+                  type="email"
+                  placeholder="john@example.com"
+              /></label>
+            </div>
+            <div>
+              <label for="password">Password</label>
+              <input id="password" type="password" required />
+            </div>
+          </bit-code-block>
+        </form>
+
+        <bit-code-block>
+          <p style="font-size: 2rem">Hello, World!</p>
+        </bit-code-block>
+      </section>
+    </main>
+    <footer>
+      <p>2024</p>
+    </footer>
+  </body>
+</html>

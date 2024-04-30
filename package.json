@@ -1,0 +1,25 @@
+{
+  "name": "bit-css",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "parcel index.html",
+    "start-esbuild": "esbuild --bundle bit.css --outfile=bit.min.css --watch --servedir=.",
+    "build-esbuild": "esbuild --bundle bit.css --outfile=bit.min.css --target=firefox120",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.19.11",
+    "parcel": "^2.11.0"
+  },
+  "dependencies": {
+    "vite": "^5.0.11"
+  }
+}
